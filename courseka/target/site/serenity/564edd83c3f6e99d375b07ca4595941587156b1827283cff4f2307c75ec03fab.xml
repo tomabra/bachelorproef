@@ -1,0 +1,119 @@
+<acceptance-test-run title="February" name="february" steps="20" successful="20" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="104" timestamp="2017-05-13T21:37:26.002+02:00">
+  <user-story id="trainer_reoccurrences" name="Trainer reoccurrences" path="trainer_reoccurrences.story"/>
+  <tags>
+    <tag name="Trainer reoccurrences" type="story"/>
+  </tags>
+  <examples>
+    <datasets>
+      <dataset startRow="0" rowCount="0"/>
+    </datasets>
+    <headers>
+      <header>trainer</header>
+      <header>month</header>
+      <header>numberOfClasses</header>
+      <header>numberOfClassesLeft</header>
+    </headers>
+    <rows>
+      <row result="SUCCESS">
+        <value>Davy</value>
+        <value>february</value>
+        <value>0</value>
+        <value>4</value>
+      </row>
+      <row result="SUCCESS">
+        <value>Davy</value>
+        <value>february</value>
+        <value>1</value>
+        <value>3</value>
+      </row>
+      <row result="SUCCESS">
+        <value>Davy</value>
+        <value>february</value>
+        <value>2</value>
+        <value>2</value>
+      </row>
+      <row result="SUCCESS">
+        <value>Davy</value>
+        <value>february</value>
+        <value>3</value>
+        <value>1</value>
+      </row>
+      <row result="SUCCESS">
+        <value>Davy</value>
+        <value>february</value>
+        <value>4</value>
+        <value>0</value>
+      </row>
+    </rows>
+  </examples>
+  <test-group name="[1] {trainer=Davy, month=february, numberOfClasses=0, numberOfClassesLeft=4}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given {Davy} is qualified to give multiple courses</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And it is {february}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>When {Davy} gave {0} classes this month</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="16">
+      <description>Then {Davy} can still give {4} classes this month</description>
+    </test-step>
+  </test-group>
+  <test-group name="[2] {trainer=Davy, month=february, numberOfClasses=1, numberOfClassesLeft=3}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given {Davy} is qualified to give multiple courses</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And it is {february}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>When {Davy} gave {1} classes this month</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then {Davy} can still give {3} classes this month</description>
+    </test-step>
+  </test-group>
+  <test-group name="[3] {trainer=Davy, month=february, numberOfClasses=2, numberOfClassesLeft=2}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given {Davy} is qualified to give multiple courses</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And it is {february}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>When {Davy} gave {2} classes this month</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then {Davy} can still give {2} classes this month</description>
+    </test-step>
+  </test-group>
+  <test-group name="[4] {trainer=Davy, month=february, numberOfClasses=3, numberOfClassesLeft=1}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given {Davy} is qualified to give multiple courses</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And it is {february}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>When {Davy} gave {3} classes this month</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then {Davy} can still give {1} classes this month</description>
+    </test-step>
+  </test-group>
+  <test-group name="[5] {trainer=Davy, month=february, numberOfClasses=4, numberOfClassesLeft=0}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given {Davy} is qualified to give multiple courses</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And it is {february}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>When {Davy} gave {4} classes this month</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then {Davy} can still give {0} classes this month</description>
+    </test-step>
+  </test-group>
+</acceptance-test-run>

@@ -1,0 +1,87 @@
+<story path="trainer_experience.story" title="">
+<narrative keyword="Narrative:">
+  <inOrderTo keyword="As a">training manager</inOrderTo>
+  <asA keyword="I want to">able to manage the trainer experience</asA>
+  <iWantTo keyword="So that">I know which trainer can give which core, and I know which trainers can give a class together</iWantTo>
+</narrative>
+<scenario keyword="Scenario:" title="a trainer gives multiple courses">
+<examples keyword="Examples:">
+<step>Given &lt;trainer&gt; gave &lt;course&gt; &lt;times_given&gt; times</step>
+<step>Then the experience level for this course is &lt;experience_level&gt;</step>
+<parameters>
+<names><name>trainer</name><name>course</name><name>times_given</name><name>experience_level</name></names>
+<values><value>Davy</value><value>Agile Introduction</value><value>4</value><value>senior</value></values>
+<values><value>Davy</value><value>Agile Project Management</value><value>2</value><value>senior</value></values>
+<values><value>Davy</value><value>Agile Engineering</value><value>1</value><value>junior</value></values>
+<values><value>Davy</value><value>Marketing &amp; Communication</value><value>0</value><value>junior</value></values>
+</parameters>
+
+<example keyword="Example:">{trainer=Davy, course=Agile Introduction, times_given=4, experience_level=senior}</example>
+<step outcome="successful">Given <parameter>Davy</parameter> gave <parameter>Agile Introduction</parameter> <parameter>4</parameter> times</step>
+<step outcome="successful">Then the experience level for this course is <parameter>senior</parameter></step>
+
+<example keyword="Example:">{trainer=Davy, course=Agile Project Management, times_given=2, experience_level=senior}</example>
+<step outcome="successful">Given <parameter>Davy</parameter> gave <parameter>Agile Project Management</parameter> <parameter>2</parameter> times</step>
+<step outcome="successful">Then the experience level for this course is <parameter>senior</parameter></step>
+
+<example keyword="Example:">{trainer=Davy, course=Agile Engineering, times_given=1, experience_level=junior}</example>
+<step outcome="successful">Given <parameter>Davy</parameter> gave <parameter>Agile Engineering</parameter> <parameter>1</parameter> times</step>
+<step outcome="successful">Then the experience level for this course is <parameter>junior</parameter></step>
+
+<example keyword="Example:">{trainer=Davy, course=Marketing &amp; Communication, times_given=0, experience_level=junior}</example>
+<step outcome="successful">Given <parameter>Davy</parameter> gave <parameter>Marketing &amp; Communication</parameter> <parameter>0</parameter> times</step>
+<step outcome="successful">Then the experience level for this course is <parameter>junior</parameter></step>
+</examples>
+</scenario>
+<scenario keyword="Scenario:" title="a trainer gives only 2 courses">
+<examples keyword="Examples:">
+<step>Given &lt;trainer&gt; gave &lt;course&gt; &lt;times_given&gt; times</step>
+<step>Then the experience level for this course is &lt;experience_level&gt;</step>
+<parameters>
+<names><name>trainer</name><name>course</name><name>times_given</name><name>experience_level</name></names>
+<values><value>Davy</value><value>Agile Engineering</value><value>1</value><value>junior</value></values>
+<values><value>Davy</value><value>Agile Testing</value><value>1</value><value>junior</value></values>
+</parameters>
+
+<example keyword="Example:">{trainer=Davy, course=Agile Engineering, times_given=1, experience_level=junior}</example>
+<step outcome="successful">Given <parameter>Davy</parameter> gave <parameter>Agile Engineering</parameter> <parameter>1</parameter> times</step>
+<step outcome="successful">Then the experience level for this course is <parameter>junior</parameter></step>
+
+<example keyword="Example:">{trainer=Davy, course=Agile Testing, times_given=1, experience_level=junior}</example>
+<step outcome="successful">Given <parameter>Davy</parameter> gave <parameter>Agile Testing</parameter> <parameter>1</parameter> times</step>
+<step outcome="successful">Then the experience level for this course is <parameter>junior</parameter></step>
+</examples>
+</scenario>
+<scenario keyword="Scenario:" title="re-education is needed">
+<examples keyword="Examples:">
+<step>Given &lt;trainer&gt; gave &lt;course&gt; &lt;times_given&gt; times</step>
+<step>And the experience level for this course is &lt;experience_level&gt;</step>
+<step>When &lt;reeducation&gt;</step>
+<step>Then the new experience level before the re-education is &lt;experience_level_before_reeducation&gt;</step>
+<parameters>
+<names><name>trainer</name><name>course</name><name>times_given</name><name>experience_level</name><name>reeducation</name><name>experience_level_before_reeducation</name></names>
+<values><value>Davy</value><value>Agile Introduction</value><value>4</value><value>senior</value><value>reeducation needed</value><value>senior</value></values>
+<values><value>Davy</value><value>Agile Project Management</value><value>2</value><value>senior</value><value>reeducation needed</value><value>junior</value></values>
+<values><value>Davy</value><value>Agile Team Coaching</value><value>3</value><value>senior</value><value>reeducation needed</value><value>senior</value></values>
+</parameters>
+
+<example keyword="Example:">{trainer=Davy, course=Agile Introduction, times_given=4, experience_level=senior, reeducation=reeducation needed, experience_level_before_reeducation=senior}</example>
+<step outcome="successful">Given <parameter>Davy</parameter> gave <parameter>Agile Introduction</parameter> <parameter>4</parameter> times</step>
+<step outcome="successful">And the experience level for this course is <parameter>senior</parameter></step>
+<step outcome="successful">When <parameter>reeducation needed</parameter></step>
+<step outcome="successful">Then the new experience level before the re-education is <parameter>senior</parameter></step>
+
+<example keyword="Example:">{trainer=Davy, course=Agile Project Management, times_given=2, experience_level=senior, reeducation=reeducation needed, experience_level_before_reeducation=junior}</example>
+<step outcome="successful">Given <parameter>Davy</parameter> gave <parameter>Agile Project Management</parameter> <parameter>2</parameter> times</step>
+<step outcome="successful">And the experience level for this course is <parameter>senior</parameter></step>
+<step outcome="successful">When <parameter>reeducation needed</parameter></step>
+<step outcome="successful">Then the new experience level before the re-education is <parameter>junior</parameter></step>
+
+<example keyword="Example:">{trainer=Davy, course=Agile Team Coaching, times_given=3, experience_level=senior, reeducation=reeducation needed, experience_level_before_reeducation=senior}</example>
+<step outcome="successful">Given <parameter>Davy</parameter> gave <parameter>Agile Team Coaching</parameter> <parameter>3</parameter> times</step>
+<step outcome="successful">And the experience level for this course is <parameter>senior</parameter></step>
+<step outcome="successful">When <parameter>reeducation needed</parameter></step>
+<step outcome="successful">Then the new experience level before the re-education is <parameter>senior</parameter></step>
+</examples>
+</scenario>
+</story>
