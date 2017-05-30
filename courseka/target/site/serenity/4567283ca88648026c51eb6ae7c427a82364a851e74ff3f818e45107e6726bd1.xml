@@ -1,0 +1,47 @@
+<acceptance-test-run title="a trainer gives only 2 courses" name="a trainer gives only 2 courses" steps="4" successful="4" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="16" timestamp="2017-05-13T21:37:27.940+02:00">
+  <user-story id="trainer_experience" name="Trainer experience" path="trainer_experience.story"/>
+  <tags>
+    <tag name="Trainer experience" type="story"/>
+  </tags>
+  <examples>
+    <datasets>
+      <dataset startRow="0" rowCount="0"/>
+    </datasets>
+    <headers>
+      <header>trainer</header>
+      <header>course</header>
+      <header>times_given</header>
+      <header>experience_level</header>
+    </headers>
+    <rows>
+      <row result="SUCCESS">
+        <value>Davy</value>
+        <value>Agile Engineering</value>
+        <value>1</value>
+        <value>junior</value>
+      </row>
+      <row result="SUCCESS">
+        <value>Davy</value>
+        <value>Agile Testing</value>
+        <value>1</value>
+        <value>junior</value>
+      </row>
+    </rows>
+  </examples>
+  <test-group name="[1] {trainer=Davy, course=Agile Engineering, times_given=1, experience_level=junior}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given {Davy} gave {Agile Engineering} {1} times</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then the experience level for this course is {junior}</description>
+    </test-step>
+  </test-group>
+  <test-group name="[2] {trainer=Davy, course=Agile Testing, times_given=1, experience_level=junior}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given {Davy} gave {Agile Testing} {1} times</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then the experience level for this course is {junior}</description>
+    </test-step>
+  </test-group>
+</acceptance-test-run>

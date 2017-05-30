@@ -1,0 +1,71 @@
+<acceptance-test-run title="only qualified trainers from the same project are available" name="only qualified trainers from the same project are available" steps="10" successful="10" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="78" timestamp="2017-05-13T21:37:27.195+02:00">
+  <user-story id="trainer_couples" name="Trainer couples" path="trainer_couples.story"/>
+  <tags>
+    <tag name="Trainer couples" type="story"/>
+  </tags>
+  <examples>
+    <datasets>
+      <dataset startRow="0" rowCount="0"/>
+    </datasets>
+    <headers>
+      <header>trainer1</header>
+      <header>trainer2</header>
+      <header>numberOfTrainers</header>
+      <header>trainer1Project</header>
+      <header>trainer2Project</header>
+      <header>allowedStatus</header>
+    </headers>
+    <rows>
+      <row result="SUCCESS">
+        <value>Davy</value>
+        <value>Stijn</value>
+        <value>2</value>
+        <value>RSVZ</value>
+        <value>RSVZ</value>
+        <value>allowed to work together</value>
+      </row>
+      <row result="SUCCESS">
+        <value>Karl</value>
+        <value>Frank</value>
+        <value>2</value>
+        <value>RSVZ</value>
+        <value>RSVZ</value>
+        <value>allowed to work together</value>
+      </row>
+    </rows>
+  </examples>
+  <test-group name="[1] {trainer1=Davy, trainer2=Stijn, numberOfTrainers=2, trainer1Project=RSVZ, trainer2Project=RSVZ, allowedStatus=allowed to work together}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given the trainings manager wants to select {Davy} and {Stijn} for a class</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And {2} qualified trainers from other projects are available</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="16">
+      <description>When {Davy} works on {RSVZ}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And {Stijn} works on {RSVZ}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="16">
+      <description>Then these trainers are {allowed to work together}</description>
+    </test-step>
+  </test-group>
+  <test-group name="[2] {trainer1=Karl, trainer2=Frank, numberOfTrainers=2, trainer1Project=RSVZ, trainer2Project=RSVZ, allowedStatus=allowed to work together}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="15">
+      <description>Given the trainings manager wants to select {Karl} and {Frank} for a class</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And {2} qualified trainers from other projects are available</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>When {Karl} works on {RSVZ}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And {Frank} works on {RSVZ}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="16">
+      <description>Then these trainers are {allowed to work together}</description>
+    </test-step>
+  </test-group>
+</acceptance-test-run>

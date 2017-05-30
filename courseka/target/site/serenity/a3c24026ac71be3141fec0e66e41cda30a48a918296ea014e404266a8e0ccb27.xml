@@ -1,0 +1,75 @@
+<acceptance-test-run title="a trainer gives multiple courses" name="a trainer gives multiple courses" steps="8" successful="8" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="78" timestamp="2017-05-13T21:37:27.862+02:00">
+  <user-story id="trainer_experience" name="Trainer experience" path="trainer_experience.story"/>
+  <tags>
+    <tag name="Trainer experience" type="story"/>
+  </tags>
+  <examples>
+    <datasets>
+      <dataset startRow="0" rowCount="0"/>
+    </datasets>
+    <headers>
+      <header>trainer</header>
+      <header>course</header>
+      <header>times_given</header>
+      <header>experience_level</header>
+    </headers>
+    <rows>
+      <row result="SUCCESS">
+        <value>Davy</value>
+        <value>Agile Introduction</value>
+        <value>4</value>
+        <value>senior</value>
+      </row>
+      <row result="SUCCESS">
+        <value>Davy</value>
+        <value>Agile Project Management</value>
+        <value>2</value>
+        <value>senior</value>
+      </row>
+      <row result="SUCCESS">
+        <value>Davy</value>
+        <value>Agile Engineering</value>
+        <value>1</value>
+        <value>junior</value>
+      </row>
+      <row result="SUCCESS">
+        <value>Davy</value>
+        <value>Marketing &amp; Communication</value>
+        <value>0</value>
+        <value>junior</value>
+      </row>
+    </rows>
+  </examples>
+  <test-group name="[1] {trainer=Davy, course=Agile Introduction, times_given=4, experience_level=senior}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given {Davy} gave {Agile Introduction} {4} times</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="16">
+      <description>Then the experience level for this course is {senior}</description>
+    </test-step>
+  </test-group>
+  <test-group name="[2] {trainer=Davy, course=Agile Project Management, times_given=2, experience_level=senior}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given {Davy} gave {Agile Project Management} {2} times</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then the experience level for this course is {senior}</description>
+    </test-step>
+  </test-group>
+  <test-group name="[3] {trainer=Davy, course=Agile Engineering, times_given=1, experience_level=junior}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given {Davy} gave {Agile Engineering} {1} times</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then the experience level for this course is {junior}</description>
+    </test-step>
+  </test-group>
+  <test-group name="[4] {trainer=Davy, course=Marketing &amp; Communication, times_given=0, experience_level=junior}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given {Davy} gave {Marketing &amp; Communication} {0} times</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then the experience level for this course is {junior}</description>
+    </test-step>
+  </test-group>
+</acceptance-test-run>

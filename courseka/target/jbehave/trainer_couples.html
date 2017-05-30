@@ -1,0 +1,101 @@
+<div class="story">
+<h1></h1>
+<div class="path">trainer_couples.story</div>
+<div class="narrative"><h2>Narrative:</h2>
+<div class="element inOrderTo"><span class="keyword inOrderTo">As a</span> training manager</div>
+<div class="element asA"><span class="keyword asA">I want to</span> have the trainers of every class be well considered couples</div>
+<div class="element iWantTo"><span class="keyword iWantTo">So that</span> I assure that the class is given as well as possible</div>
+</div>
+<div class="scenario">
+<h2>Scenario: many trainers are available</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given the trainings manager wants to select &lt;trainer1&gt; and &lt;trainer2&gt; for a class</div>
+<div class="step">And &lt;numberOfTrainers&gt; qualified trainers from other projects are available</div>
+<div class="step">When &lt;trainer1&gt; works on &lt;trainer1Project&gt;</div>
+<div class="step">And &lt;trainer2&gt; works on &lt;trainer2Project&gt;</div>
+<div class="step">Then these trainers are &lt;allowedStatus&gt;</div>
+<table>
+<thead>
+<tr>
+<th>trainer1</th><th>trainer2</th><th>numberOfTrainers</th><th>trainer1Project</th><th>trainer2Project</th><th>allowedStatus</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Davy</td><td>Stijn</td><td>10</td><td>RSVZ</td><td>RSVZ</td><td>not allowed to work together</td></tr>
+<tr>
+<td>Karl</td><td>Frank</td><td>10</td><td>RSVZ</td><td>RSVZ</td><td>not allowed to work together</td></tr>
+<tr>
+<td>Davy</td><td>Tom</td><td>10</td><td>RSVZ</td><td>Ventouris</td><td>allowed to work together</td></tr>
+<tr>
+<td>Davy</td><td>Jos</td><td>10</td><td>RSVZ</td><td>Ventouris</td><td>allowed to work together</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {trainer1=Davy, trainer2=Stijn, numberOfTrainers=10, trainer1Project=RSVZ, trainer2Project=RSVZ, allowedStatus=not allowed to work together}</h3>
+<div class="step successful">Given the trainings manager wants to select <span class="step parameter">Davy</span> and <span class="step parameter">Stijn</span> for a class</div>
+<div class="step successful">And <span class="step parameter">10</span> qualified trainers from other projects are available</div>
+<div class="step successful">When <span class="step parameter">Davy</span> works on <span class="step parameter">RSVZ</span></div>
+<div class="step successful">And <span class="step parameter">Stijn</span> works on <span class="step parameter">RSVZ</span></div>
+<div class="step successful">Then these trainers are <span class="step parameter">not allowed to work together</span></div>
+
+<h3 class="example">Example: {trainer1=Karl, trainer2=Frank, numberOfTrainers=10, trainer1Project=RSVZ, trainer2Project=RSVZ, allowedStatus=not allowed to work together}</h3>
+<div class="step successful">Given the trainings manager wants to select <span class="step parameter">Karl</span> and <span class="step parameter">Frank</span> for a class</div>
+<div class="step successful">And <span class="step parameter">10</span> qualified trainers from other projects are available</div>
+<div class="step successful">When <span class="step parameter">Karl</span> works on <span class="step parameter">RSVZ</span></div>
+<div class="step successful">And <span class="step parameter">Frank</span> works on <span class="step parameter">RSVZ</span></div>
+<div class="step successful">Then these trainers are <span class="step parameter">not allowed to work together</span></div>
+
+<h3 class="example">Example: {trainer1=Davy, trainer2=Tom, numberOfTrainers=10, trainer1Project=RSVZ, trainer2Project=Ventouris, allowedStatus=allowed to work together}</h3>
+<div class="step successful">Given the trainings manager wants to select <span class="step parameter">Davy</span> and <span class="step parameter">Tom</span> for a class</div>
+<div class="step successful">And <span class="step parameter">10</span> qualified trainers from other projects are available</div>
+<div class="step successful">When <span class="step parameter">Davy</span> works on <span class="step parameter">RSVZ</span></div>
+<div class="step successful">And <span class="step parameter">Tom</span> works on <span class="step parameter">Ventouris</span></div>
+<div class="step successful">Then these trainers are <span class="step parameter">allowed to work together</span></div>
+
+<h3 class="example">Example: {trainer1=Davy, trainer2=Jos, numberOfTrainers=10, trainer1Project=RSVZ, trainer2Project=Ventouris, allowedStatus=allowed to work together}</h3>
+<div class="step successful">Given the trainings manager wants to select <span class="step parameter">Davy</span> and <span class="step parameter">Jos</span> for a class</div>
+<div class="step successful">And <span class="step parameter">10</span> qualified trainers from other projects are available</div>
+<div class="step successful">When <span class="step parameter">Davy</span> works on <span class="step parameter">RSVZ</span></div>
+<div class="step successful">And <span class="step parameter">Jos</span> works on <span class="step parameter">Ventouris</span></div>
+<div class="step successful">Then these trainers are <span class="step parameter">allowed to work together</span></div>
+</div>
+</div>
+<div class="scenario">
+<h2>Scenario: only qualified trainers from the same project are available</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given the trainings manager wants to select &lt;trainer1&gt; and &lt;trainer2&gt; for a class</div>
+<div class="step">And &lt;numberOfTrainers&gt; qualified trainers from other projects are available</div>
+<div class="step">When &lt;trainer1&gt; works on &lt;trainer1Project&gt;</div>
+<div class="step">And &lt;trainer2&gt; works on &lt;trainer2Project&gt;</div>
+<div class="step">Then these trainers are &lt;allowedStatus&gt;</div>
+<table>
+<thead>
+<tr>
+<th>trainer1</th><th>trainer2</th><th>numberOfTrainers</th><th>trainer1Project</th><th>trainer2Project</th><th>allowedStatus</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Davy</td><td>Stijn</td><td>2</td><td>RSVZ</td><td>RSVZ</td><td>allowed to work together</td></tr>
+<tr>
+<td>Karl</td><td>Frank</td><td>2</td><td>RSVZ</td><td>RSVZ</td><td>allowed to work together</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {trainer1=Davy, trainer2=Stijn, numberOfTrainers=2, trainer1Project=RSVZ, trainer2Project=RSVZ, allowedStatus=allowed to work together}</h3>
+<div class="step successful">Given the trainings manager wants to select <span class="step parameter">Davy</span> and <span class="step parameter">Stijn</span> for a class</div>
+<div class="step successful">And <span class="step parameter">2</span> qualified trainers from other projects are available</div>
+<div class="step successful">When <span class="step parameter">Davy</span> works on <span class="step parameter">RSVZ</span></div>
+<div class="step successful">And <span class="step parameter">Stijn</span> works on <span class="step parameter">RSVZ</span></div>
+<div class="step successful">Then these trainers are <span class="step parameter">allowed to work together</span></div>
+
+<h3 class="example">Example: {trainer1=Karl, trainer2=Frank, numberOfTrainers=2, trainer1Project=RSVZ, trainer2Project=RSVZ, allowedStatus=allowed to work together}</h3>
+<div class="step successful">Given the trainings manager wants to select <span class="step parameter">Karl</span> and <span class="step parameter">Frank</span> for a class</div>
+<div class="step successful">And <span class="step parameter">2</span> qualified trainers from other projects are available</div>
+<div class="step successful">When <span class="step parameter">Karl</span> works on <span class="step parameter">RSVZ</span></div>
+<div class="step successful">And <span class="step parameter">Frank</span> works on <span class="step parameter">RSVZ</span></div>
+<div class="step successful">Then these trainers are <span class="step parameter">allowed to work together</span></div>
+</div>
+</div>
+</div>

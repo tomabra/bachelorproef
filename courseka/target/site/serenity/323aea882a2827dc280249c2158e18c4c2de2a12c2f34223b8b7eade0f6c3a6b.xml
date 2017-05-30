@@ -1,0 +1,236 @@
+<acceptance-test-run title="&gt;= 1 day training and only two trainers are qualified" name="&gt;= 1 day training and only two trainers are qualified" steps="48" successful="48" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="219" timestamp="2017-05-13T21:37:27.482+02:00">
+  <user-story id="trainer_availability" name="Trainer availability" path="trainer_availability.story"/>
+  <tags>
+    <tag name="Trainer availability" type="story"/>
+  </tags>
+  <examples>
+    <datasets>
+      <dataset startRow="0" rowCount="0"/>
+    </datasets>
+    <headers>
+      <header>status</header>
+      <header>availability</header>
+      <header>action</header>
+      <header>response</header>
+      <header>new_action</header>
+    </headers>
+    <rows>
+      <row result="SUCCESS">
+        <value>working elsewhere</value>
+        <value>unavailable</value>
+        <value>invite</value>
+        <value>unavailable</value>
+        <value>reschedule class</value>
+      </row>
+      <row result="SUCCESS">
+        <value>tentative</value>
+        <value>unsure</value>
+        <value>invite</value>
+        <value>unavailable</value>
+        <value>reschedule class</value>
+      </row>
+      <row result="SUCCESS">
+        <value>busy</value>
+        <value>unavailable</value>
+        <value>invite</value>
+        <value>unavailable</value>
+        <value>reschedule class</value>
+      </row>
+      <row result="SUCCESS">
+        <value>out of office</value>
+        <value>unavailable</value>
+        <value>invite</value>
+        <value>unavailable</value>
+        <value>reschedule class</value>
+      </row>
+      <row result="SUCCESS">
+        <value>working elsewhere</value>
+        <value>unavailable</value>
+        <value>invite</value>
+        <value>available</value>
+        <value>plan class</value>
+      </row>
+      <row result="SUCCESS">
+        <value>tentative</value>
+        <value>unsure</value>
+        <value>invite</value>
+        <value>available</value>
+        <value>plan class</value>
+      </row>
+      <row result="SUCCESS">
+        <value>busy</value>
+        <value>unavailable</value>
+        <value>invite</value>
+        <value>available</value>
+        <value>plan class</value>
+      </row>
+      <row result="SUCCESS">
+        <value>out of office</value>
+        <value>unavailable</value>
+        <value>invite</value>
+        <value>available</value>
+        <value>plan class</value>
+      </row>
+    </rows>
+  </examples>
+  <test-group name="[1] {status=working elsewhere, availability=unavailable, action=invite, response=unavailable, new_action=reschedule class}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given the trainer has a status {working elsewhere}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And only two trainers are qualified to give this course</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer availability is {unavailable}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="16">
+      <description>When the action is {invite}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer response is {unavailable}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then the new action is {reschedule class}</description>
+    </test-step>
+  </test-group>
+  <test-group name="[2] {status=tentative, availability=unsure, action=invite, response=unavailable, new_action=reschedule class}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given the trainer has a status {tentative}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="16">
+      <description>And only two trainers are qualified to give this course</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer availability is {unsure}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>When the action is {invite}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer response is {unavailable}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then the new action is {reschedule class}</description>
+    </test-step>
+  </test-group>
+  <test-group name="[3] {status=busy, availability=unavailable, action=invite, response=unavailable, new_action=reschedule class}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given the trainer has a status {busy}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="15">
+      <description>And only two trainers are qualified to give this course</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer availability is {unavailable}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>When the action is {invite}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer response is {unavailable}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then the new action is {reschedule class}</description>
+    </test-step>
+  </test-group>
+  <test-group name="[4] {status=out of office, availability=unavailable, action=invite, response=unavailable, new_action=reschedule class}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given the trainer has a status {out of office}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And only two trainers are qualified to give this course</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer availability is {unavailable}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>When the action is {invite}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer response is {unavailable}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then the new action is {reschedule class}</description>
+    </test-step>
+  </test-group>
+  <test-group name="[5] {status=working elsewhere, availability=unavailable, action=invite, response=available, new_action=plan class}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given the trainer has a status {working elsewhere}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And only two trainers are qualified to give this course</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer availability is {unavailable}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>When the action is {invite}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer response is {available}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then the new action is {plan class}</description>
+    </test-step>
+  </test-group>
+  <test-group name="[6] {status=tentative, availability=unsure, action=invite, response=available, new_action=plan class}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given the trainer has a status {tentative}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And only two trainers are qualified to give this course</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="16">
+      <description>And the trainer availability is {unsure}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="15">
+      <description>When the action is {invite}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer response is {available}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then the new action is {plan class}</description>
+    </test-step>
+  </test-group>
+  <test-group name="[7] {status=busy, availability=unavailable, action=invite, response=available, new_action=plan class}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given the trainer has a status {busy}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And only two trainers are qualified to give this course</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer availability is {unavailable}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="16">
+      <description>When the action is {invite}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer response is {available}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then the new action is {plan class}</description>
+    </test-step>
+  </test-group>
+  <test-group name="[8] {status=out of office, availability=unavailable, action=invite, response=available, new_action=plan class}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="0">
+      <description>Given the trainer has a status {out of office}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And only two trainers are qualified to give this course</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>And the trainer availability is {unavailable}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="16">
+      <description>When the action is {invite}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="4">
+      <description>And the trainer response is {available}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="0">
+      <description>Then the new action is {plan class}</description>
+    </test-step>
+  </test-group>
+</acceptance-test-run>
