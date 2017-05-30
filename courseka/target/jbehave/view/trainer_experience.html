@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>trainer_experience</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+<div class="story">
+<h1></h1>
+<div class="path">trainer_experience.story</div>
+<div class="narrative"><h2>Narrative:</h2>
+<div class="element inOrderTo"><span class="keyword inOrderTo">As a</span> training manager</div>
+<div class="element asA"><span class="keyword asA">I want to</span> able to manage the trainer experience</div>
+<div class="element iWantTo"><span class="keyword iWantTo">So that</span> I know which trainer can give which core, and I know which trainers can give a class together</div>
+</div>
+<div class="scenario">
+<h2>Scenario: a trainer gives multiple courses</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given &lt;trainer&gt; gave &lt;course&gt; &lt;times_given&gt; times</div>
+<div class="step">Then the experience level for this course is &lt;experience_level&gt;</div>
+<table>
+<thead>
+<tr>
+<th>trainer</th><th>course</th><th>times_given</th><th>experience_level</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Davy</td><td>Agile Introduction</td><td>4</td><td>senior</td></tr>
+<tr>
+<td>Davy</td><td>Agile Project Management</td><td>2</td><td>senior</td></tr>
+<tr>
+<td>Davy</td><td>Agile Engineering</td><td>1</td><td>junior</td></tr>
+<tr>
+<td>Davy</td><td>Marketing &amp; Communication</td><td>0</td><td>junior</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {trainer=Davy, course=Agile Introduction, times_given=4, experience_level=senior}</h3>
+<div class="step successful">Given <span class="step parameter">Davy</span> gave <span class="step parameter">Agile Introduction</span> <span class="step parameter">4</span> times</div>
+<div class="step successful">Then the experience level for this course is <span class="step parameter">senior</span></div>
+
+<h3 class="example">Example: {trainer=Davy, course=Agile Project Management, times_given=2, experience_level=senior}</h3>
+<div class="step successful">Given <span class="step parameter">Davy</span> gave <span class="step parameter">Agile Project Management</span> <span class="step parameter">2</span> times</div>
+<div class="step successful">Then the experience level for this course is <span class="step parameter">senior</span></div>
+
+<h3 class="example">Example: {trainer=Davy, course=Agile Engineering, times_given=1, experience_level=junior}</h3>
+<div class="step successful">Given <span class="step parameter">Davy</span> gave <span class="step parameter">Agile Engineering</span> <span class="step parameter">1</span> times</div>
+<div class="step successful">Then the experience level for this course is <span class="step parameter">junior</span></div>
+
+<h3 class="example">Example: {trainer=Davy, course=Marketing &amp; Communication, times_given=0, experience_level=junior}</h3>
+<div class="step successful">Given <span class="step parameter">Davy</span> gave <span class="step parameter">Marketing &amp; Communication</span> <span class="step parameter">0</span> times</div>
+<div class="step successful">Then the experience level for this course is <span class="step parameter">junior</span></div>
+</div>
+</div>
+<div class="scenario">
+<h2>Scenario: a trainer gives only 2 courses</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given &lt;trainer&gt; gave &lt;course&gt; &lt;times_given&gt; times</div>
+<div class="step">Then the experience level for this course is &lt;experience_level&gt;</div>
+<table>
+<thead>
+<tr>
+<th>trainer</th><th>course</th><th>times_given</th><th>experience_level</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Davy</td><td>Agile Engineering</td><td>1</td><td>junior</td></tr>
+<tr>
+<td>Davy</td><td>Agile Testing</td><td>1</td><td>junior</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {trainer=Davy, course=Agile Engineering, times_given=1, experience_level=junior}</h3>
+<div class="step successful">Given <span class="step parameter">Davy</span> gave <span class="step parameter">Agile Engineering</span> <span class="step parameter">1</span> times</div>
+<div class="step successful">Then the experience level for this course is <span class="step parameter">junior</span></div>
+
+<h3 class="example">Example: {trainer=Davy, course=Agile Testing, times_given=1, experience_level=junior}</h3>
+<div class="step successful">Given <span class="step parameter">Davy</span> gave <span class="step parameter">Agile Testing</span> <span class="step parameter">1</span> times</div>
+<div class="step successful">Then the experience level for this course is <span class="step parameter">junior</span></div>
+</div>
+</div>
+<div class="scenario">
+<h2>Scenario: re-education is needed</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given &lt;trainer&gt; gave &lt;course&gt; &lt;times_given&gt; times</div>
+<div class="step">And the experience level for this course is &lt;experience_level&gt;</div>
+<div class="step">When &lt;reeducation&gt;</div>
+<div class="step">Then the new experience level before the re-education is &lt;experience_level_before_reeducation&gt;</div>
+<table>
+<thead>
+<tr>
+<th>trainer</th><th>course</th><th>times_given</th><th>experience_level</th><th>reeducation</th><th>experience_level_before_reeducation</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Davy</td><td>Agile Introduction</td><td>4</td><td>senior</td><td>reeducation needed</td><td>senior</td></tr>
+<tr>
+<td>Davy</td><td>Agile Project Management</td><td>2</td><td>senior</td><td>reeducation needed</td><td>junior</td></tr>
+<tr>
+<td>Davy</td><td>Agile Team Coaching</td><td>3</td><td>senior</td><td>reeducation needed</td><td>senior</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {trainer=Davy, course=Agile Introduction, times_given=4, experience_level=senior, reeducation=reeducation needed, experience_level_before_reeducation=senior}</h3>
+<div class="step successful">Given <span class="step parameter">Davy</span> gave <span class="step parameter">Agile Introduction</span> <span class="step parameter">4</span> times</div>
+<div class="step successful">And the experience level for this course is <span class="step parameter">senior</span></div>
+<div class="step successful">When <span class="step parameter">reeducation needed</span></div>
+<div class="step successful">Then the new experience level before the re-education is <span class="step parameter">senior</span></div>
+
+<h3 class="example">Example: {trainer=Davy, course=Agile Project Management, times_given=2, experience_level=senior, reeducation=reeducation needed, experience_level_before_reeducation=junior}</h3>
+<div class="step successful">Given <span class="step parameter">Davy</span> gave <span class="step parameter">Agile Project Management</span> <span class="step parameter">2</span> times</div>
+<div class="step successful">And the experience level for this course is <span class="step parameter">senior</span></div>
+<div class="step successful">When <span class="step parameter">reeducation needed</span></div>
+<div class="step successful">Then the new experience level before the re-education is <span class="step parameter">junior</span></div>
+
+<h3 class="example">Example: {trainer=Davy, course=Agile Team Coaching, times_given=3, experience_level=senior, reeducation=reeducation needed, experience_level_before_reeducation=senior}</h3>
+<div class="step successful">Given <span class="step parameter">Davy</span> gave <span class="step parameter">Agile Team Coaching</span> <span class="step parameter">3</span> times</div>
+<div class="step successful">And the experience level for this course is <span class="step parameter">senior</span></div>
+<div class="step successful">When <span class="step parameter">reeducation needed</span></div>
+<div class="step successful">Then the new experience level before the re-education is <span class="step parameter">senior</span></div>
+</div>
+</div>
+</div>
+
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>
