@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: courseka.at.CoursekaIT
+-------------------------------------------------------------------------------
+Tests run: 344, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.138 sec - in courseka.at.CoursekaIT

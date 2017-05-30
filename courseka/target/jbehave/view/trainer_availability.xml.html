@@ -1,0 +1,299 @@
+<html>
+<head>
+<title>trainer_availability</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+ 
+<script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+<story path="trainer_availability.story" title="">
+<narrative keyword="Narrative:">
+  <inOrderTo keyword="As a">training manager</inOrderTo>
+  <asA keyword="I want to">invite trainers for a class that are available on the agreed date and time</asA>
+  <iWantTo keyword="So that">I won&apos;t invite trainers that are not available</iWantTo>
+</narrative>
+<scenario keyword="Scenario:" title="&gt;= 1 day training and many trainers are qualified">
+<examples keyword="Examples:">
+<step>Given the trainer has a status &lt;status&gt;</step>
+<step>When many trainers are qualified to give this course</step>
+<step>Then the trainer availability is &lt;availability&gt;</step>
+<step>And the action should be &lt;action&gt;</step>
+<parameters>
+<names><name>status</name><name>availability</name><name>action</name></names>
+<values><value>working elsewhere</value><value>unavailable</value><value>do not invite</value></values>
+<values><value>tentative</value><value>unsure</value><value>invite</value></values>
+<values><value>busy</value><value>unavailable</value><value>do not invite</value></values>
+<values><value>out of office</value><value>unavailable</value><value>do not invite</value></values>
+</parameters>
+
+<example keyword="Example:">{status=working elsewhere, availability=unavailable, action=do not invite}</example>
+<step outcome="successful">Given the trainer has a status <parameter>working elsewhere</parameter></step>
+<step outcome="successful">When many trainers are qualified to give this course</step>
+<step outcome="successful">Then the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">And the action should be <parameter>do not invite</parameter></step>
+
+<example keyword="Example:">{status=tentative, availability=unsure, action=invite}</example>
+<step outcome="successful">Given the trainer has a status <parameter>tentative</parameter></step>
+<step outcome="successful">When many trainers are qualified to give this course</step>
+<step outcome="successful">Then the trainer availability is <parameter>unsure</parameter></step>
+<step outcome="successful">And the action should be <parameter>invite</parameter></step>
+
+<example keyword="Example:">{status=busy, availability=unavailable, action=do not invite}</example>
+<step outcome="successful">Given the trainer has a status <parameter>busy</parameter></step>
+<step outcome="successful">When many trainers are qualified to give this course</step>
+<step outcome="successful">Then the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">And the action should be <parameter>do not invite</parameter></step>
+
+<example keyword="Example:">{status=out of office, availability=unavailable, action=do not invite}</example>
+<step outcome="successful">Given the trainer has a status <parameter>out of office</parameter></step>
+<step outcome="successful">When many trainers are qualified to give this course</step>
+<step outcome="successful">Then the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">And the action should be <parameter>do not invite</parameter></step>
+</examples>
+</scenario>
+<scenario keyword="Scenario:" title="&lt;= 0.5 day training and many trainers are qualified">
+<examples keyword="Examples:">
+<step>Given the trainer has a status &lt;status&gt;</step>
+<step>When many trainers are qualified to give this course</step>
+<step>Then the trainer availability is &lt;availability&gt;</step>
+<step>And the action should be &lt;action&gt;</step>
+<parameters>
+<names><name>status</name><name>availability</name><name>action</name></names>
+<values><value>working elsewhere</value><value>unavailable</value><value>do not invite</value></values>
+<values><value>tentative</value><value>unsure</value><value>invite</value></values>
+<values><value>busy</value><value>unavailable</value><value>do not invite</value></values>
+<values><value>out of office</value><value>unavailable</value><value>do not invite</value></values>
+</parameters>
+
+<example keyword="Example:">{status=working elsewhere, availability=unavailable, action=do not invite}</example>
+<step outcome="successful">Given the trainer has a status <parameter>working elsewhere</parameter></step>
+<step outcome="successful">When many trainers are qualified to give this course</step>
+<step outcome="successful">Then the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">And the action should be <parameter>do not invite</parameter></step>
+
+<example keyword="Example:">{status=tentative, availability=unsure, action=invite}</example>
+<step outcome="successful">Given the trainer has a status <parameter>tentative</parameter></step>
+<step outcome="successful">When many trainers are qualified to give this course</step>
+<step outcome="successful">Then the trainer availability is <parameter>unsure</parameter></step>
+<step outcome="successful">And the action should be <parameter>invite</parameter></step>
+
+<example keyword="Example:">{status=busy, availability=unavailable, action=do not invite}</example>
+<step outcome="successful">Given the trainer has a status <parameter>busy</parameter></step>
+<step outcome="successful">When many trainers are qualified to give this course</step>
+<step outcome="successful">Then the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">And the action should be <parameter>do not invite</parameter></step>
+
+<example keyword="Example:">{status=out of office, availability=unavailable, action=do not invite}</example>
+<step outcome="successful">Given the trainer has a status <parameter>out of office</parameter></step>
+<step outcome="successful">When many trainers are qualified to give this course</step>
+<step outcome="successful">Then the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">And the action should be <parameter>do not invite</parameter></step>
+</examples>
+</scenario>
+<scenario keyword="Scenario:" title="&gt;= 1 day training and only two trainers are qualified">
+<examples keyword="Examples:">
+<step>Given the trainer has a status &lt;status&gt;</step>
+<step>And only two trainers are qualified to give this course</step>
+<step>And the trainer availability is &lt;availability&gt;</step>
+<step>When the action is &lt;action&gt;</step>
+<step>And the trainer response is &lt;response&gt;</step>
+<step>Then the new action is &lt;new_action&gt;</step>
+<parameters>
+<names><name>status</name><name>availability</name><name>action</name><name>response</name><name>new_action</name></names>
+<values><value>working elsewhere</value><value>unavailable</value><value>invite</value><value>unavailable</value><value>reschedule class</value></values>
+<values><value>tentative</value><value>unsure</value><value>invite</value><value>unavailable</value><value>reschedule class</value></values>
+<values><value>busy</value><value>unavailable</value><value>invite</value><value>unavailable</value><value>reschedule class</value></values>
+<values><value>out of office</value><value>unavailable</value><value>invite</value><value>unavailable</value><value>reschedule class</value></values>
+<values><value>working elsewhere</value><value>unavailable</value><value>invite</value><value>available</value><value>plan class</value></values>
+<values><value>tentative</value><value>unsure</value><value>invite</value><value>available</value><value>plan class</value></values>
+<values><value>busy</value><value>unavailable</value><value>invite</value><value>available</value><value>plan class</value></values>
+<values><value>out of office</value><value>unavailable</value><value>invite</value><value>available</value><value>plan class</value></values>
+</parameters>
+
+<example keyword="Example:">{status=working elsewhere, availability=unavailable, action=invite, response=unavailable, new_action=reschedule class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>working elsewhere</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">When the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>unavailable</parameter></step>
+<step outcome="successful">Then the new action is <parameter>reschedule class</parameter></step>
+
+<example keyword="Example:">{status=tentative, availability=unsure, action=invite, response=unavailable, new_action=reschedule class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>tentative</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unsure</parameter></step>
+<step outcome="successful">When the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>unavailable</parameter></step>
+<step outcome="successful">Then the new action is <parameter>reschedule class</parameter></step>
+
+<example keyword="Example:">{status=busy, availability=unavailable, action=invite, response=unavailable, new_action=reschedule class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>busy</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">When the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>unavailable</parameter></step>
+<step outcome="successful">Then the new action is <parameter>reschedule class</parameter></step>
+
+<example keyword="Example:">{status=out of office, availability=unavailable, action=invite, response=unavailable, new_action=reschedule class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>out of office</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">When the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>unavailable</parameter></step>
+<step outcome="successful">Then the new action is <parameter>reschedule class</parameter></step>
+
+<example keyword="Example:">{status=working elsewhere, availability=unavailable, action=invite, response=available, new_action=plan class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>working elsewhere</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">When the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>available</parameter></step>
+<step outcome="successful">Then the new action is <parameter>plan class</parameter></step>
+
+<example keyword="Example:">{status=tentative, availability=unsure, action=invite, response=available, new_action=plan class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>tentative</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unsure</parameter></step>
+<step outcome="successful">When the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>available</parameter></step>
+<step outcome="successful">Then the new action is <parameter>plan class</parameter></step>
+
+<example keyword="Example:">{status=busy, availability=unavailable, action=invite, response=available, new_action=plan class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>busy</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">When the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>available</parameter></step>
+<step outcome="successful">Then the new action is <parameter>plan class</parameter></step>
+
+<example keyword="Example:">{status=out of office, availability=unavailable, action=invite, response=available, new_action=plan class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>out of office</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">When the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>available</parameter></step>
+<step outcome="successful">Then the new action is <parameter>plan class</parameter></step>
+</examples>
+</scenario>
+<scenario keyword="Scenario:" title="&lt;= 0.5 day training and only two trainers are qualified">
+<examples keyword="Examples:">
+<step>Given the trainer has a status &lt;status&gt;</step>
+<step>And only two trainers are qualified to give this course</step>
+<step>And the trainer availability is &lt;availability&gt;</step>
+<step>When the answer to is the trainer available on another moment this day is &lt;available_on_another_moment_this_day&gt;</step>
+<step>And the action is &lt;action&gt;</step>
+<step>And the trainer response is &lt;response&gt;</step>
+<step>Then the new action is &lt;new_action&gt;</step>
+<parameters>
+<names><name>status</name><name>availability</name><name>available_on_another_moment_this_day</name><name>action</name><name>response</name><name>new_action</name></names>
+<values><value>working elsewhere</value><value>unavailable</value><value>no</value><value>invite</value><value>unavailable</value><value>reschedule class</value></values>
+<values><value>tentative</value><value>unsure</value><value>nvt</value><value>invite</value><value>unavailable</value><value>reschedule class</value></values>
+<values><value>busy</value><value>unavailable</value><value>no</value><value>invite</value><value>unavailable</value><value>reschedule class</value></values>
+<values><value>out of office</value><value>unavailable</value><value>no</value><value>invite</value><value>unavailable</value><value>reschedule class</value></values>
+<values><value>working elsewhere</value><value>unavailable</value><value>yes</value><value>invite</value><value>available</value><value>plan class</value></values>
+<values><value>tentative</value><value>unsure</value><value>nvt</value><value>invite</value><value>available</value><value>plan class</value></values>
+<values><value>busy</value><value>unavailable</value><value>yes</value><value>invite</value><value>available</value><value>plan class</value></values>
+<values><value>out of office</value><value>unavailable</value><value>yes</value><value>invite</value><value>available</value><value>plan class</value></values>
+</parameters>
+
+<example keyword="Example:">{status=working elsewhere, availability=unavailable, available_on_another_moment_this_day=no, action=invite, response=unavailable, new_action=reschedule class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>working elsewhere</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">When the answer to is the trainer available on another moment this day is <parameter>no</parameter></step>
+<step outcome="successful">And the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>unavailable</parameter></step>
+<step outcome="successful">Then the new action is <parameter>reschedule class</parameter></step>
+
+<example keyword="Example:">{status=tentative, availability=unsure, available_on_another_moment_this_day=nvt, action=invite, response=unavailable, new_action=reschedule class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>tentative</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unsure</parameter></step>
+<step outcome="successful">When the answer to is the trainer available on another moment this day is <parameter>nvt</parameter></step>
+<step outcome="successful">And the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>unavailable</parameter></step>
+<step outcome="successful">Then the new action is <parameter>reschedule class</parameter></step>
+
+<example keyword="Example:">{status=busy, availability=unavailable, available_on_another_moment_this_day=no, action=invite, response=unavailable, new_action=reschedule class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>busy</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">When the answer to is the trainer available on another moment this day is <parameter>no</parameter></step>
+<step outcome="successful">And the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>unavailable</parameter></step>
+<step outcome="successful">Then the new action is <parameter>reschedule class</parameter></step>
+
+<example keyword="Example:">{status=out of office, availability=unavailable, available_on_another_moment_this_day=no, action=invite, response=unavailable, new_action=reschedule class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>out of office</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">When the answer to is the trainer available on another moment this day is <parameter>no</parameter></step>
+<step outcome="successful">And the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>unavailable</parameter></step>
+<step outcome="successful">Then the new action is <parameter>reschedule class</parameter></step>
+
+<example keyword="Example:">{status=working elsewhere, availability=unavailable, available_on_another_moment_this_day=yes, action=invite, response=available, new_action=plan class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>working elsewhere</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">When the answer to is the trainer available on another moment this day is <parameter>yes</parameter></step>
+<step outcome="successful">And the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>available</parameter></step>
+<step outcome="successful">Then the new action is <parameter>plan class</parameter></step>
+
+<example keyword="Example:">{status=tentative, availability=unsure, available_on_another_moment_this_day=nvt, action=invite, response=available, new_action=plan class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>tentative</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unsure</parameter></step>
+<step outcome="successful">When the answer to is the trainer available on another moment this day is <parameter>nvt</parameter></step>
+<step outcome="successful">And the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>available</parameter></step>
+<step outcome="successful">Then the new action is <parameter>plan class</parameter></step>
+
+<example keyword="Example:">{status=busy, availability=unavailable, available_on_another_moment_this_day=yes, action=invite, response=available, new_action=plan class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>busy</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">When the answer to is the trainer available on another moment this day is <parameter>yes</parameter></step>
+<step outcome="successful">And the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>available</parameter></step>
+<step outcome="successful">Then the new action is <parameter>plan class</parameter></step>
+
+<example keyword="Example:">{status=out of office, availability=unavailable, available_on_another_moment_this_day=yes, action=invite, response=available, new_action=plan class}</example>
+<step outcome="successful">Given the trainer has a status <parameter>out of office</parameter></step>
+<step outcome="successful">And only two trainers are qualified to give this course</step>
+<step outcome="successful">And the trainer availability is <parameter>unavailable</parameter></step>
+<step outcome="successful">When the answer to is the trainer available on another moment this day is <parameter>yes</parameter></step>
+<step outcome="successful">And the action is <parameter>invite</parameter></step>
+<step outcome="successful">And the trainer response is <parameter>available</parameter></step>
+<step outcome="successful">Then the new action is <parameter>plan class</parameter></step>
+</examples>
+</scenario>
+</story>
+
+]]></script>
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>

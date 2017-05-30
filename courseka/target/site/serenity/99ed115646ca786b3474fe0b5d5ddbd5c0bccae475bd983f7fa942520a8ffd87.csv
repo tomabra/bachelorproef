@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Trainer experience","a trainer gives multiple courses","SUCCESS","2017-05-13T19:37:27.862Z","0.0","0.08"
+"Trainer experience","a trainer gives only 2 courses","SUCCESS","2017-05-13T19:37:27.940Z","0.0","0.02"
+"Trainer experience","re-education is needed","SUCCESS","2017-05-13T19:37:27.956Z","0.0","0.07"
